@@ -43,9 +43,11 @@ module.exports = {
         if(user.username === post.username){
           post.delete();
           return "Post Deleted Sucessfully"
+        }else{
+          throw new Error ('You are not Authorized to delete this post')
         }
       } catch (error) {
-        
+        throw new Error(error)
       }
     }
   }
